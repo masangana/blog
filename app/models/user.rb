@@ -3,10 +3,6 @@ class User < ApplicationRecord
     has_many :posts
     has_many :likes
     
-    def update_posts_counter
-        update(posts_counter: posts.count)
-    end
-
     def last_post
         posts.order(created_at: :desc).first
     end
