@@ -1,41 +1,38 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-    save_user = User.new(name: "John Doe", photo: "https://unsplash.com/photos/ZGa9d1a_4tA", bio: "Sunt veniam est irure veniam Lorem.", posts_counter: 0)
-    save_first_post = Post.new(title: "First Post", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", comments_counter: 0, likes_counter: 0, user_id: save_user.id)
-    save_second_post = Post.new(title: "Second Post", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", comments_counter: 0, likes_counter: 0, user_id: save_user.id)
-    save_first_comment = Comment.new(content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", post_id: save_first_post.id, user_id: save_user.id)
-    save_second_comment = Comment.new(content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", post_id: save_first_post.id, user_id: save_user.id)
-    save_third_comment = Comment.new(content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", post_id: save_second_post.id, user_id: save_user.id)
-    save_first_like = Like.new(post_id: save_first_post.id, user_id: save_user.id)
-    save_second_like = Like.new(post_id: save_first_post.id, user_id: save_user.id)
-    save_third_like = Like.new(post_id: save_second_post.id, user_id: save_user.id)
-    save_user.save
-    save_first_post.save
-    save_second_post.save
-    save_first_comment.save
-    save_second_comment.save
-    save_third_comment.save
-    save_first_like.save
-    save_second_like.save
-    save_third_like.save
+  first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.',
+                           posts_counter: 0)
 
-    it "is valid with valid attributes" do
-        expect(save_user).to be_valid
+  first_post = Post.new(user: first_user, title: 'Hello', text: 'This is my first post', comments_counter: 2,
+                        likes_counter: 3)
+  second_post = Post.new(user: first_user, title: 'Hello', text: 'This is my second post', comments_counter: 2,
+                         likes_counter: 3)
+  third_post = Post.new(user: first_user, title: 'Hello', text: 'This is my third post', comments_counter: 2,
+                        likes_counter: 3)
+  fourth_post = Post.new(user: first_user, title: 'Hello', text: 'This is my fourth post', comments_counter: 2,
+                         likes_counter: 3)
+
+  context 'Write validation tests for User Model' do
+    it 'is not valid without a name' do
+      first_user.name = nil
+      expect(first_user).to_not be_valid
     end
 
-    it "is not valid without a name" do
-        user = User.new(name: nil)
-        expect(user).to_not be_valid
+    it 'is valid with a name' do
+      first_user.name = 'Mavericks'
+      expect(first_user).to be_valid
     end
 
-    it "is not valid without a photo" do
-        user = User.new(photo: nil)
-        expect(user).to_not be_valid
+    it 'is not valid if posts_counter is not an integer' do
+      first_user.posts_counter = 'Balitaan'
+      expect(first_user).to_not be_valid
     end
 
-    it "is not valid without a bio" do
-        user = User.new(bio  : nil)
-        expect(user).to_not be_valid
+    it 'is not valid if posts_counter is negative' do
+      first_user.posts_counter = -21
+      expect(first_user).to_not be_valid
     end
+  end
+
 end
