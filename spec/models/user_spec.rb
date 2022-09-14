@@ -1,17 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.',
+  first_user = User.create(name: 'Jhon Doe', photo: 'hhttps://unsplash.com/photos/ccXF7zV_f48', bio: 'eu dolor.',
                            posts_counter: 0)
-
-  first_post = Post.new(user: first_user, title: 'Hello', text: 'This is my first post', comments_counter: 2,
-                        likes_counter: 3)
-  second_post = Post.new(user: first_user, title: 'Hello', text: 'This is my second post', comments_counter: 2,
-                         likes_counter: 3)
-  third_post = Post.new(user: first_user, title: 'Hello', text: 'This is my third post', comments_counter: 2,
-                        likes_counter: 3)
-  fourth_post = Post.new(user: first_user, title: 'Hello', text: 'This is my fourth post', comments_counter: 2,
-                         likes_counter: 3)
 
   context 'Write validation tests for User Model' do
     it 'is not valid without a name' do
@@ -34,5 +25,4 @@ RSpec.describe User, type: :model do
       expect(first_user).to_not be_valid
     end
   end
-
 end
