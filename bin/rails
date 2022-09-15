@@ -1,4 +1,4 @@
-#rubocop:disable all
+# rubocop:disable all
 #!/usr/bin/env ruby
 APP_PATH = File.expand_path('../config/application', __dir__)
 require_relative '../config/boot'
