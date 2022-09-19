@@ -59,6 +59,12 @@ group :development, :test do
 
   # use rspect for testing
   gem 'rspec-rails'
+
+  # use for end to end testing
+  gem 'capybara'
+
+  # use for controller testing
+  gem 'rails-controller-testing'
 end
 
 group :development do
