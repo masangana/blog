@@ -22,7 +22,7 @@ posts_counter: 3},
 {name: 'Doverly Kapinga', photo: '2.jpg', bio: 'Host, weeding planer. very beautyfull girl', posts_counter: 0}])
 
 posts = Post.create([
-    {user: user.last, title: 'How to plan a  good weeding', text: 'Eu nisi fugiat 
+    {user: users.last, title: 'How to plan a  good weeding', text: 'Eu nisi fugiat 
 elit deserunt mollit veniam consequat et duis qui est. Id labore exercitation 
 ea cillum velit est. Quis veniam est incididunt dolore consectetur laboris
 sunt culpa. Nulla ex sit commodo elit culpa adipisicing id anim ad magna 
@@ -49,7 +49,7 @@ Reprehenderit commodo mollit fugiat duis excepteur nulla nisi culpa.
 Consequat qui officia in deserunt laborum aute sit quis aute esse consectetur sunt elit proident. 
 Exercitation eiusmod mollit ullamco qui commodo labore fugiat. Reprehenderit et deserunt non ipsum.', comments_counter: 0, likes_counter: 0},
 
-{user: user.first, title: 'Work for your live', text: 'Eu nisi fugiat 
+{user: users.first, title: 'Work for your live', text: 'Eu nisi fugiat 
 elit deserunt mollit veniam consequat et duis qui est. Id labore exercitation 
 ea cillum velit est. Quis veniam est incididunt dolore consectetur laboris
 sunt culpa. Nulla ex sit commodo elit culpa adipisicing id anim ad magna 
