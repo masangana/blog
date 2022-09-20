@@ -15,14 +15,68 @@ p "database cleaned !"
 p "Seeding..."
 
 # Create users
-users = User.create([{name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.',
-posts_counter: 0},
-{name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.', posts_counter: 0}])
+users = User.create([{name: 'Joe Kasongo', photo: '1.jpg', bio: 'A passionate developer and a great cooker. PDG of JKLM group. 26 years old.', 
+posts_counter: 3},
+{name: 'Kessy Masangana', photo: '2.jpg', bio: 'Very clever. 16 years old. A very good gamer', posts_counter: 0},
+{name: 'Mamadou Kasongo', photo: '2.jpg', bio: 'A very good cook. 26 years old. A very good gamer', posts_counter: 0},
+{name: 'Doverly Kapinga', photo: '2.jpg', bio: 'Host, weeding planer. very beautyfull girl', posts_counter: 0}])
 
-posts = Post.create([{user: users.first, title: 'Hello', text: 'This is my first post', comments_counter: 0,
-likes_counter: 0},
-{user: users.first, title: 'Hello', text: 'This is my second post', comments_counter: 0, likes_counter: 0},
-{user: users.first, title: 'Hello', text: 'This is my long post. Hi Tom!
+posts = Post.create([
+    {user: user.last, title: 'How to plan a  good weeding', text: 'Eu nisi fugiat 
+elit deserunt mollit veniam consequat et duis qui est. Id labore exercitation 
+ea cillum velit est. Quis veniam est incididunt dolore consectetur laboris
+sunt culpa. Nulla ex sit commodo elit culpa adipisicing id anim ad magna 
+occaecat id ullamco proident. Sunt tempor ex irure officia elit laboris 
+quis reprehenderit officia non. Consequat magna consequat officia tempor sit. Labore esse adipisicing deserunt quis minim.
+Incididunt id sint ad reprehenderit qui fugiat tempor ullamco mollit aliqua. 
+Occaecat est qui eiusmod aliquip magna sint exercitation laboris ullamco
+laboris ad proident. Eiusmod do pariatur mollit et ut anim voluptate aliqua cupidatat officia sunt nisi quis velit. 
+Laborum aliqua sunt eiusmod culpa voluptate esse. Magna aliquip ut 
+et exercitation do est laboris aliqua commodo aliquip dolore mollit 
+laborum elit. Aliqua aute nulla exercitation esse ex nulla non.
+Eu fugiat eu anim proident dolore anim anim culpa labore enim et. 
+Veniam sunt qui consectetur ea laborum laboris ad culpa ut dolore. 
+Irure in deserunt minim aliquip minim irure excepteur officia duis 
+culpa reprehenderit deserunt commodo. Tempor ipsum nisi veniam est 
+irure exercitation do esse id est. Enim aliquip esse est eu mollit 
+sint est qui cupidatat. Laborum exercitation amet cillum excepteur 
+amet officia qui velit. Laboris elit nisi et aute consequat consectetur.
+Aliquip ea nulla sunt do eiusmod. Veniam adipisicing excepteur cillum enim quis. 
+Occaecat labore et ad ad enim reprehenderit occaecat minim proident 
+ex occaecat laboris irure proident. Ea deserunt ipsum consequat pariatur 
+officia. Nisi nisi adipisicing veniam enim non elit magna ea laboris labore.
+Reprehenderit commodo mollit fugiat duis excepteur nulla nisi culpa. 
+Consequat qui officia in deserunt laborum aute sit quis aute esse consectetur sunt elit proident. 
+Exercitation eiusmod mollit ullamco qui commodo labore fugiat. Reprehenderit et deserunt non ipsum.', comments_counter: 0, likes_counter: 0},
+
+{user: user.first, title: 'Work for your live', text: 'Eu nisi fugiat 
+elit deserunt mollit veniam consequat et duis qui est. Id labore exercitation 
+ea cillum velit est. Quis veniam est incididunt dolore consectetur laboris
+sunt culpa. Nulla ex sit commodo elit culpa adipisicing id anim ad magna 
+occaecat id ullamco proident. Sunt tempor ex irure officia elit laboris 
+quis reprehenderit officia non. Consequat magna consequat officia tempor sit. Labore esse adipisicing deserunt quis minim.
+Incididunt id sint ad reprehenderit qui fugiat tempor ullamco mollit aliqua. 
+Occaecat est qui eiusmod aliquip magna sint exercitation laboris ullamco
+laboris ad proident. Eiusmod do pariatur mollit et ut anim voluptate aliqua cupidatat officia sunt nisi quis velit. 
+Laborum aliqua sunt eiusmod culpa voluptate esse. Magna aliquip ut 
+et exercitation do est laboris aliqua commodo aliquip dolore mollit 
+laborum elit. Aliqua aute nulla exercitation esse ex nulla non.
+Eu fugiat eu anim proident dolore anim anim culpa labore enim et. 
+Veniam sunt qui consectetur ea laborum laboris ad culpa ut dolore. 
+Irure in deserunt minim aliquip minim irure excepteur officia duis 
+culpa reprehenderit deserunt commodo. Tempor ipsum nisi veniam est 
+irure exercitation do esse id est. Enim aliquip esse est eu mollit 
+sint est qui cupidatat. Laborum exercitation amet cillum excepteur 
+amet officia qui velit. Laboris elit nisi et aute consequat consectetur.
+Aliquip ea nulla sunt do eiusmod. Veniam adipisicing excepteur cillum enim quis. 
+Occaecat labore et ad ad enim reprehenderit occaecat minim proident 
+ex occaecat laboris irure proident. Ea deserunt ipsum consequat pariatur 
+officia. Nisi nisi adipisicing veniam enim non elit magna ea laboris labore.
+Reprehenderit commodo mollit fugiat duis excepteur nulla nisi culpa. 
+Consequat qui officia in deserunt laborum aute sit quis aute esse consectetur sunt elit proident. 
+Exercitation eiusmod mollit ullamco qui commodo labore fugiat. Reprehenderit et deserunt non ipsum.', comments_counter: 0, likes_counter: 0},
+
+{user: users.first, title: 'Renegate', text: '
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu odio. Nulla feugiat, ipsum quis facilisis
 vulputate, elit metus vehicula risus, sit amet suscipit mauris sem at est. Aliquam erat volutpat. Vivamus id ligula
 pretium, iaculis risus vitae, eleifend nibh. Donec bibendum pharetra eleifend. Nunc enim ligula, sodales venenatis
@@ -40,10 +94,16 @@ vehicula lectus at, elementum cursus turpis. Donec quam nibh, ultricies eu condi
 comments_counter: 0, likes_counter: 0}])
 
 # Create comments
-comments = Comment.create([{post: posts.first, user: users[1], text: 'Hi Tom!'},
-{post: posts.first, user: users[1],text: 'Hi Tom! Again'},
-{post: posts.first, user: users[1], text: 'Hi Tom! Thrice'},
-{post: posts[1], user: users[1], text: 'Hi Tom! Four times'}])
+comments = Comment.create([{post: posts.first, user: users.first, text: 'Can you give me your contact?'},
+
+{post: posts.first, user: users.last,text: 'Hi! Ask me by mail. My email is: contact@weeding.com '},
+{post: posts.first, user: users[1], text: 'Good subject'},
+{post: posts.last, user: users.last, text: 'Very strong!'},
+{post: posts.last, user: users[1], text: 'I like it!'},
+{post: posts.last, user: users.first, text: 'I like it too!'},
+{post: posts[1], user: users.first, text: 'I like it too!'},
+{post: posts[1], user: users.last, text: 'I like it too!'},
+{post: posts[1], user: users[1], text: 'I like it too!'},])
 
 p "Successfully created #{User.count} users"
 p "Successfully created #{Post.count} posts"
