@@ -11,8 +11,10 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-
-        redirect_to user_post_path(@comment.post.user, @comment.post)
+        format.html do
+          redirect_to user_post_path(@comment.post.user, @comment.post),
+                      notice: 'Comment was successfully created.'
+        end
       else
         render :new
       end
