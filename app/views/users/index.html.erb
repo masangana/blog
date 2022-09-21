@@ -1,1 +1,7 @@
-<h1>Will list all users</h1>
+<div>
+  <% @users.each do |user| %>
+    <%= link_to user do %>
+    <%= render partial: 'users/cards/info', locals: { user: user } %>
+    <% end %>
+  <% end %>
+</div>

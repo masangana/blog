@@ -1,1 +1,9 @@
-<h1>Will show all user details</h1>
+<%= render partial: 'users/cards/info', locals: { user: @user } %>
+<%= render partial: 'users/cards/bio', locals: { user: @user } %>
+
+<div class='post-show'>
+  <% @recent_posts.each do |post| %>
+      <%= render partial: 'posts/cards/info', locals: { post: post } %>
+  <% end %>
+  <button><%= link_to 'See all posts', user_posts_path(@user) %></button>
+</div>

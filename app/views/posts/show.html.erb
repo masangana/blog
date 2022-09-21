@@ -1,1 +1,2 @@
-<h1>Here well be displayed a detailled post</h1>
+
+<%=  render partial: 'posts/cards/more', locals: { post: @post, comments: @post.recent_comments} %>
