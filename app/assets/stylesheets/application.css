@@ -28,6 +28,12 @@
     color: #555555;
   }
 
+  .btn-view{
+   display: flex; 
+   align-items: flex-start;
+   width: 400px;
+  }
+
   .profile{
     width: 400px;
     margin-right: 25px;
@@ -164,4 +170,19 @@ button {
 
 .post-header h2 {
   width: 50%;
+}
+
+.new-like form input {
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+.new-like form button {
+  max-width: 10rem;
+  align-self: center;
+  margin: 1rem;
+}
+
+.Add-comment {
+  margin: 1rem;
 }
