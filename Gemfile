@@ -76,6 +76,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # gem "bullet" to find N+1 queries
+  gem 'bullet'
 end
 
 group :test do
