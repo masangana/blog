@@ -1,18 +1,21 @@
 require 'rails_helper'
-require_relative '../config/environment'
 
-ENV['RAILS_ENV'] ||= 'test'
+RSpec.describe "users/index", type: :system do
+  describe 'index page' do
+    it 'displays all users' do
+      visit users_path
+      expect(page).to have_content('Joe Kasongo')
+    end
 
-config.filter_rails_from_backtrace!
+    it 'displays all users pictures' do
+      visit users_path
+      expect(page).to have_css("img[src*='#{User.first.photo}']")
+    end
 
-if bullet.enable?
-
-  config.before(:each) do
-    Bullet.start_request
+    it 'redirects to user page' do
+      visit users_path
+      click_link('Joe Kasongo')
+      expect(page).to have_content('Joe Kasongo')
+    end
   end
-
-  config.after(:each) do
-    Bullet.perform_out_of_channel_notifications if Bullet.notification?
-    Bullet.end_request
-  end
-end
+end 
