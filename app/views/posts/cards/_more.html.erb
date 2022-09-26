@@ -18,7 +18,7 @@
 
 <% if comments.any? %>
   <div class='comments-list'>
-    <% comments.each do |comment| %>
+    <% comments.includes(:user).each do |comment| %>
       <div class='comment-card'>
         <h3><%= comment.user.name %>: <span class='comment-content'><%= comment.text %></span></h3>
       </div>
