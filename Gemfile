@@ -65,6 +65,11 @@ group :development, :test do
 
   # use for controller testing
   gem 'rails-controller-testing'
+
+  # use for interacting with browser
+  gem 'selenium-webdriver'
+
+  gem 'webdrivers'
 end
 
 group :development do
