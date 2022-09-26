@@ -1,5 +1,18 @@
 require 'rails_helper'
+require_relative '../config/environment'
 
-RSpec.describe 'users/index.html.erb', type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+ENV['RAILS_ENV'] ||= 'test'
+
+config.filter_rails_from_backtrace!
+
+if bullet.enable?
+
+  config.before(:each) do
+    Bullet.start_request
+  end
+
+  config.after(:each) do
+    Bullet.perform_out_of_channel_notifications if Bullet.notification?
+    Bullet.end_request
+  end
 end

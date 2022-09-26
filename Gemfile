@@ -83,7 +83,7 @@ group :development do
   # gem "spring"
 
   # gem "bullet" to find N+1 queries
-  gem 'bullet'
+  gem 'bullet', require: true
 end
 
 group :test do
