@@ -27,6 +27,6 @@ RSpec.describe 'users #index', type: :feature do
 
   it 'changes to user profile after clicking on a card' do
     click_link(@users.first.name.to_s)
-    expect(page).to have_content('Profile')
+    expect(page).to have_content('Bio')
   end
 end
