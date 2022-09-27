@@ -21,7 +21,6 @@ RSpec.describe 'users #index', type: :feature do
   it 'displays all users cards' do
     @users.each do |user|
       expect(page).to have_content(user.name)
-      
     end
   end
 
