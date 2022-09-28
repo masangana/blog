@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user!
+  
   def index
     @posts = Post.includes(:user).where(user: params[:user_id])
   end
