@@ -37,8 +37,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_085353) do
     t.bigint "user_id", null: false
     t.string "title"
     t.text "text"
-    t.integer "comments_counter"
-    t.string "likes_counter"
+    t.integer "comments_counter", default: 0
+    t.string "likes_counter", default: "0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -46,9 +46,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_085353) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "photo"
-    t.text "bio"
-    t.integer "posts_counter"
+    t.string "photo", default: "https://cdn-icons-png.flaticon.com/512/1159/1159797.png?"
+    t.text "bio", default: "This user has no bio yet"
+    t.integer "posts_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -56,6 +56,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_085353) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
