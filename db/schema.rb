@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_085353) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "photo", default: "https://cdn-icons-png.flaticon.com/512/1159/1159797.png?"
+    t.string "photo", default: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png?"
     t.text "bio", default: "This user has no bio yet"
     t.integer "posts_counter", default: 0
     t.datetime "created_at", null: false
